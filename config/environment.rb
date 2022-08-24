@@ -22,3 +22,5 @@ esther.update_record
 esther.delete_student
 
 pp Student.show_all
+p "hello the oldest"
+pp Student.the_oldest

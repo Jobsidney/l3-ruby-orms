@@ -75,6 +75,15 @@ def self.wholeTable(row)
     )
 end
 #the oldest
+def self.the_oldest
+    query=<<-SQL
+        SELECT * FROM students ORDER BY age DESC LIMIT 1;
+    SQL
+    DB[:conn].execute(query).map{
+        |row|
+        self.wholeTable(row)
+    }
+end
 
 # TODO: SEARCH FOR RECORD THAT MEETS CERTAIN CONDITIONS
 private
